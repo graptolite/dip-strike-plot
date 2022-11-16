@@ -1,0 +1,14 @@
+site,easting,northing,strike,dip,"dip direction",plane_type
+1,30,40,167,45,w,bedding
+2,20,40,33,90,,bedding
+3,10,40,19,0,,bedding
+4,30,30,13,23,e,foliation
+5,20,30,56,90,s,foliation
+6,10,30,19,0,,foliation
+7,30,20,45,45,s,joint
+8,20,20,34,90,,joint
+9,10,20,84,0,n,joint
+10,30,10,23,64,w,vein
+11,20,10,34,90,,vein
+12,10,10,45,0,w,vein
+13,30,40,130,50,w,bedding

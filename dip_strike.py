@@ -110,7 +110,7 @@ def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=
     strike_line = path(*join_points(e_n_p1,e_n_p2),"strike-" + path_id,colour=colour)
     return svg_group("group-" + path_id,"\n".join([strike_line,dip_line,dip_mag]))
 
-def plot_data(datafile):
+def plot_data(datafile,downscale=1):
     df = pd.read_csv(datafile,delimiter=",").fillna("")
     plot_df = df
     df["easting"] = df["easting"].apply(float)
@@ -136,13 +136,13 @@ def plot_data(datafile):
                 strike = standardise_strike(strike+config.MAGNETIC_CORRECTION,dip,letter2bearing(dip_dir))
 
             if easting and northing and strike:
-                dipstrike = plot_dip_strike(easting,northing,strike,dip,"dipstrike" + str(i),cmap(i),origin=origin,downscale=1,plane_type=plane_type)
+                dipstrike = plot_dip_strike(easting,northing,strike,dip,"dipstrike" + str(i),cmap(i),origin=origin,downscale=downscale,plane_type=plane_type)
                 dipstrikes.append(dipstrike)
         combined_svg += svg_group(plane_type,"\n".join(dipstrikes))
 
     return combined_svg
 
-dipstrike_svgs = plot_data(config.DATA_FILE)
+dipstrike_svgs = plot_data(config.DATA_FILE,config.DOWNSCALE)
 
 with open(config.SVG_FILE,"w") as outfile:
     outfile.write(svg(dipstrike_svgs))

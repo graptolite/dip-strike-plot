@@ -28,6 +28,7 @@ Note: currently, the accepted `plane_type`s are:
 - `bedding`
 - `vein`
 - `joint`
+
 For `joint` and `vein`, the symbols for horizontal and vertical dips are a bit strange at the moment - however, the script should plot the dip magnitude as well, which can be used to identify planes in these specific orientations.
 # Output
 The scale of the output svg should be such that the dips and strikes can be directly copied and pasted into their correspondingly scaled OS map then just translated for alignment (no scaling necessary).

@@ -56,13 +56,16 @@ def join_points(p1,p2):
     return [p1[0],p1[1],p2[0],p2[1]]
 
 def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=[0,0],downscale=1,plane_type="bedding"):
-    path = lambda x0,y0,x1,y1,path_id,width=0.05,colour="#000000" : """<path style="fill:none;stroke:%s;stroke-width:%fpx;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M %f,%f %f,%f" id="%s"/>""" % (colour,width/downscale,x0,y0,x1,y1,path_id)
+    line_thickness = config.LINE_THICKNESS
+    font_size = config.FONT_SIZE
+
+    path = lambda x0,y0,x1,y1,path_id,width=line_thickness,colour="#000000" : """<path style="fill:none;stroke:%s;stroke-width:%fpx;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M %f,%f %f,%f" id="%s"/>""" % (colour,width/downscale,x0,y0,x1,y1,path_id)
 
     text = lambda x,y,text,text_id,colour="#000000" : """<text style="font-size:%(font_size)f;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;fill:%(colour)s;fill-opacity:1;" x="%(x)f" y="%(y)f" id="%(text_id)s">
-<tspan id="tspan-%(text_id)s" x="%(x)f" y="%(y)f" style="stroke-width:%(font_width)f">%(text)s</tspan>
-</text>""" % {"x":x,"y":y,"text_id":text_id,"text":text,"colour":colour,"font_size":1/downscale,"font_width":.4/downscale}
+<tspan id="tspan-%(text_id)s" x="%(x)f" y="%(y)f">%(text)s</tspan>
+</text>""" % {"x":x,"y":y,"text_id":text_id,"text":text,"colour":colour,"font_size":font_size/downscale}
 
-    line_length = 5/downscale
+    line_length = config.STRIKE_LINE_LENGTH/downscale
     half_line_length = line_length/2
 
     e_n = ((np.array([easting,northing]) - np.array(origin)) / downscale) * np.array([1,-1])

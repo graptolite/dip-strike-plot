@@ -19,6 +19,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 |easting|northing|strike|dip|dip direction|plane_type|
 |-------|--------|------|---|-------------|----------|
 
+The dip direction should be in letter format, with a maximum length of 2 letters - i.e. the options are `n,ne,e,se,s,sw,w,nw`.
+
 2) Change `GRID_INTERVAL` (in mm) and `MAP_SCALE` as necessary to match your data. The default in `config.py` is for 4 figure grid references on a 1:10k map.
 
 3) If a magnetic correction is required, change `MAGNETIC_CORRECTION` in `config.py`.

@@ -18,13 +18,18 @@ def deg2rad(deg):
 
 def letter2bearing(letter_dir):
     try:
+        n_letters = len(letter_dir)
+        if n_letters > 2:
+            print("Warning: Too many letter in the direction \"%s\" - the maximum number of letters are 2. Removing later letters" % letter_dir)
+            letter_dir = letter_dir[:2]
+            n_letters = 2
         dir_dict = {"n":0,
                     "e":90,
                     "s":180,
                     "w":270}
         if "w" in letter_dir:
             dir_dict["n"] = 360
-        bearing = sum([dir_dict[letter] for letter in letter_dir]) / len(letter_dir)
+        bearing = sum([dir_dict[letter] for letter in letter_dir]) / n_letters
     except TypeError:
         return None
     return bearing

@@ -30,8 +30,9 @@ def letter2bearing(letter_dir):
     return bearing
 
 def standardise_strike(strike,dip,dip_dir):
-    dip_right = (strike + 90)%360
-    dip_left = (strike - 90)%360
+    strike_vec = np.array([np.sin(deg2rad(strike)),np.cos(deg2rad(strike))])
+    dip_vec = np.array([deg2rad(np.sin(dip_dir)),deg2rad(np.cos(dip_dir))])
+    normal = np.cross(dip_vec,strike_vec) # normal should be positive if dip is clockwise of strike based on the right hand rule for cross products
     if dip_dir == "" and dip == 90:
         # doesn't really matter
         RH_rule_strike = strike
@@ -39,9 +40,7 @@ def standardise_strike(strike,dip,dip_dir):
         # doesn't really matter
         RH_rule_strike = strike
     elif dip_dir != "":
-        diff_dip_right = abs(dip_dir - dip_right)
-        diff_dip_left = abs(dip_dir - dip_left)
-        if diff_dip_right < diff_dip_left:
+        if normal > 0:
             # dip is clockwise of strike so is fine
             RH_rule_strike = strike
         else:
@@ -139,7 +138,7 @@ def plot_data(datafile,grid_interval=1,map_scale=1):
             if dip_dir:
                 strike = standardise_strike(strike+config.MAGNETIC_CORRECTION,dip,letter2bearing(dip_dir))
 
-            if easting and northing and strike:
+            if easting != "" and northing != "" and strike != "":
                 dipstrike = plot_dip_strike(easting,northing,strike,dip,"dipstrike" + str(i),cmap(i),origin=origin,grid_interval=grid_interval,map_scale=map_scale,plane_type=plane_type)
                 dipstrikes.append(dipstrike)
         combined_svg += svg_group(plane_type,"\n".join(dipstrikes))

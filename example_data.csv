@@ -12,3 +12,6 @@ site,easting,northing,strike,dip,"dip direction",plane_type
 11,20,10,34,90,,vein
 12,10,10,45,0,w,vein
 13,30,40,130,50,w,bedding
+14,30,0,72,20,n,bedding
+15,20,0,45,20,n,bedding
+16,10,0,72,20,s,bedding

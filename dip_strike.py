@@ -55,7 +55,8 @@ def join_points(p1,p2):
     # plot straight line that joins the two points p1 and p2
     return [p1[0],p1[1],p2[0],p2[1]]
 
-def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=[0,0],downscale=1,plane_type="bedding"):
+def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=[0,0],grid_interval=10000,map_scale=10000,plane_type="bedding"):
+    downscale = (map_scale/grid_interval) * 0.2645
     line_thickness = config.LINE_THICKNESS
     font_size = config.FONT_SIZE
 
@@ -113,7 +114,7 @@ def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=
     strike_line = path(*join_points(e_n_p1,e_n_p2),"strike-" + path_id,colour=colour)
     return svg_group("group-" + path_id,"\n".join([strike_line,dip_line,dip_mag]))
 
-def plot_data(datafile,downscale=1):
+def plot_data(datafile,grid_interval=1,map_scale=1):
     df = pd.read_csv(datafile,delimiter=",").fillna("")
     plot_df = df
     df["easting"] = df["easting"].apply(float)
@@ -139,13 +140,13 @@ def plot_data(datafile,downscale=1):
                 strike = standardise_strike(strike+config.MAGNETIC_CORRECTION,dip,letter2bearing(dip_dir))
 
             if easting and northing and strike:
-                dipstrike = plot_dip_strike(easting,northing,strike,dip,"dipstrike" + str(i),cmap(i),origin=origin,downscale=downscale,plane_type=plane_type)
+                dipstrike = plot_dip_strike(easting,northing,strike,dip,"dipstrike" + str(i),cmap(i),origin=origin,grid_interval=grid_interval,map_scale=map_scale,plane_type=plane_type)
                 dipstrikes.append(dipstrike)
         combined_svg += svg_group(plane_type,"\n".join(dipstrikes))
 
     return combined_svg
 
-dipstrike_svgs = plot_data(config.DATA_FILE,config.DOWNSCALE)
+dipstrike_svgs = plot_data(config.DATA_FILE,config.GRID_INTERVAL,config.MAP_SCALE)
 
 with open(config.SVG_FILE,"w") as outfile:
     outfile.write(svg(dipstrike_svgs))

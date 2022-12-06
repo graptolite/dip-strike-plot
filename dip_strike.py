@@ -93,8 +93,9 @@ def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=
             d0 = e_n
             d1 = e_n - p_d # (n,e) of the end of the dip line
 
+        bedding_dip_line = path(*join_points(d0,d1),"dip-" + path_id,colour=colour)
         if plane_type == "bedding":
-            dip_line = beddind_dip_line = path(*join_points(d0,d1),"dip-" + path_id,colour=colour)
+            dip_line = bedding_dip_line
         elif plane_type == "foliation":
             foliation_dip_double_spacing_factor = 0.1
             foliation_dip_double_spacing = p*foliation_dip_double_spacing_factor

@@ -35,9 +35,6 @@ def letter2bearing(letter_dir):
     return bearing
 
 def standardise_strike(strike,dip,dip_dir):
-    strike_vec = np.array([np.sin(deg2rad(strike)),np.cos(deg2rad(strike))])
-    dip_vec = np.array([deg2rad(np.sin(dip_dir)),deg2rad(np.cos(dip_dir))])
-    normal = np.cross(dip_vec,strike_vec) # normal should be positive if dip is clockwise of strike based on the right hand rule for cross products
     if dip_dir == "" and dip == 90:
         # doesn't really matter
         RH_rule_strike = strike
@@ -45,6 +42,9 @@ def standardise_strike(strike,dip,dip_dir):
         # doesn't really matter
         RH_rule_strike = strike
     elif dip_dir != "":
+        strike_vec = np.array([np.sin(deg2rad(strike)),np.cos(deg2rad(strike))])
+        dip_vec = np.array([deg2rad(np.sin(dip_dir)),deg2rad(np.cos(dip_dir))])
+        normal = np.cross(dip_vec,strike_vec) # normal should be positive if dip is clockwise of strike based on the right hand rule for cross products
         if normal > 0:
             # dip is clockwise of strike so is fine
             RH_rule_strike = strike

@@ -1,4 +1,4 @@
-site,easting,northing,strike,dip,"dip direction",plane_type
+site,easting,northing,strike,dip,dip direction,plane_type
 1,30,40,167,45,w,bedding
 2,20,40,33,90,,bedding
 3,10,40,19,0,,bedding
@@ -15,3 +15,4 @@ site,easting,northing,strike,dip,"dip direction",plane_type
 14,30,0,72,20,n,bedding
 15,20,0,45,20,n,bedding
 16,10,0,72,20,s,bedding
+17,0,0,123,,,bedding

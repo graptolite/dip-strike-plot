@@ -17,6 +17,7 @@ def deg2rad(deg):
     return (deg/360) * 2 * np.pi
 
 def letter2bearing(letter_dir):
+    letter_dir = letter_dir.strip().lower()
     try:
         n_letters = len(letter_dir)
         if n_letters > 2:
@@ -131,7 +132,7 @@ def plot_data(datafile,grid_interval=1,map_scale=1):
     origin = np.array([min(df["easting"]),min(df["northing"])])
 
     combined_svg = ""
-    for plane_type in set(df["plane_type"]): # out of foliation, bedding, vein, joint (at least for now)
+    for plane_type in sorted(set(df["plane_type"])): # out of foliation, bedding, vein, joint (at least for now)
         dipstrikes = []
         plane_df = plot_df[plot_df["plane_type"]==plane_type]
         for i in plane_df.index:

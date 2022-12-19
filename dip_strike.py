@@ -151,7 +151,7 @@ def plot_data(datafile,grid_interval=1,map_scale=1):
             dip_dir = data["dip direction"]
             strike = data["strike"]
             if dip_dir:
-                strike = standardise_strike(strike+config.MAGNETIC_CORRECTION,dip,letter2bearing(dip_dir))
+                strike = standardise_strike(strike,dip,letter2bearing(dip_dir))+config.MAGNETIC_CORRECTION
 
             if easting != "" and northing != "" and strike != "" and (dip != "" or config.PLOT_DIPLESS_STRIKES):
                 dipstrike = plot_dip_strike(easting,northing,strike,dip,"dipstrike" + str(i),cmap(i),origin=origin,grid_interval=grid_interval,map_scale=map_scale,plane_type=plane_type)

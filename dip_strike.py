@@ -62,8 +62,8 @@ def join_points(p1,p2):
 
 def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=[0,0],grid_interval=10000,map_scale=10000,plane_type="bedding"):
     downscale = (map_scale/grid_interval) * 0.2645
-    line_thickness = config.LINE_THICKNESS
-    font_size = config.FONT_SIZE
+    line_thickness = config.LINE_THICKNESS * downscale
+    font_size = config.FONT_SIZE * downscale
 
     path = lambda x0,y0,x1,y1,path_id,width=line_thickness,colour="#000000" : """<path style="fill:none;stroke:%s;stroke-width:%fpx;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M %f,%f %f,%f" id="%s"/>""" % (colour,width/downscale,x0,y0,x1,y1,path_id)
 
@@ -71,7 +71,7 @@ def plot_dip_strike(easting,northing,strike,dip,path_id,colour="#000000",origin=
 <tspan id="tspan-%(text_id)s" x="%(x)f" y="%(y)f">%(text)s</tspan>
 </text>""" % {"x":x,"y":y,"text_id":text_id,"text":text,"colour":colour,"font_size":font_size/downscale}
 
-    line_length = config.STRIKE_LINE_LENGTH/downscale
+    line_length = config.STRIKE_LINE_LENGTH
     half_line_length = line_length/2
 
     e_n = ((np.array([easting,northing]) - np.array(origin)) / downscale) * np.array([1,-1])

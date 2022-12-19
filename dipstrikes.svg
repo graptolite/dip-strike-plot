@@ -2,8 +2,8 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 <g id="bedding">
 <g id="group-dipstrike0">
-<path style="fill:none;stroke:#8000ff;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 115.671061,-141.485033 111.172040,-160.972434" id="strike-dipstrike0"/>
-<path style="fill:none;stroke:#8000ff;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 113.421550,-151.228733 123.165251,-153.478244" id="dip-dipstrike0"/>
+<path style="fill:none;stroke:#8000ff;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 111.172040,-160.972434 115.671061,-141.485033" id="strike-dipstrike0"/>
+<path style="fill:none;stroke:#8000ff;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 113.421550,-151.228733 103.677849,-148.979223" id="dip-dipstrike0"/>
 <text style="font-size:6.000000;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;fill:#8000ff;fill-opacity:1;" x="113.421550" y="-151.228733" id="text-dipstrike0">
 <tspan id="tspan-text-dipstrike0" x="113.421550" y="-151.228733">45</tspan>
 </text>
@@ -23,8 +23,8 @@
 </text>
 </g>
 <g id="group-dipstrike12">
-<path style="fill:none;stroke:#1996f3;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 121.081995,-144.800857 105.761106,-157.656610" id="strike-dipstrike12"/>
-<path style="fill:none;stroke:#1996f3;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 113.421550,-151.228733 119.849426,-158.889178" id="dip-dipstrike12"/>
+<path style="fill:none;stroke:#1996f3;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 105.761106,-157.656610 121.081995,-144.800857" id="strike-dipstrike12"/>
+<path style="fill:none;stroke:#1996f3;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 113.421550,-151.228733 106.993674,-143.568289" id="dip-dipstrike12"/>
 <text style="font-size:6.000000;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;fill:#1996f3;fill-opacity:1;" x="113.421550" y="-151.228733" id="text-dipstrike12">
 <tspan id="tspan-text-dipstrike12" x="113.421550" y="-151.228733">50</tspan>
 </text>
@@ -79,8 +79,8 @@
 </g>
 </g><g id="joint">
 <g id="group-dipstrike6">
-<path style="fill:none;stroke:#b2f396;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 120.492618,-82.685435 106.350482,-68.543299" id="strike-dipstrike6"/>
-<path style="fill:none;stroke:#b2f396;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 115.542870,-77.735687 106.350482,-82.685435" id="joint1-dipstrike6"/><path style="fill:none;stroke:#b2f396;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 111.300230,-73.493046 106.350482,-82.685435" id="joint2dipstrike6"/>
+<path style="fill:none;stroke:#b2f396;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 106.350482,-68.543299 120.492618,-82.685435" id="strike-dipstrike6"/>
+<path style="fill:none;stroke:#b2f396;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 111.300230,-73.493046 120.492618,-68.543299" id="joint1-dipstrike6"/><path style="fill:none;stroke:#b2f396;stroke-width:0.500000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 115.542870,-77.735687 120.492618,-68.543299" id="joint2dipstrike6"/>
 <text style="font-size:6.000000;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;fill:#b2f396;fill-opacity:1;" x="113.421550" y="-75.614367" id="text-dipstrike6">
 <tspan id="tspan-text-dipstrike6" x="113.421550" y="-75.614367">45</tspan>
 </text>

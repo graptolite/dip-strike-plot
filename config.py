@@ -16,3 +16,5 @@ FONT_SIZE = 1 # px
 STRIKE_LINE_LENGTH = 5 # px
 
 PLOT_DIPLESS_STRIKES = True # plot strikes without dips as just strike lines
+
+CUSTOM_COLOUR = "" # if not empty, hexadecimal colour code with "#" in front

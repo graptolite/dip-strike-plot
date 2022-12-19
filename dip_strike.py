@@ -128,6 +128,14 @@ def plot_data(datafile,grid_interval=1,map_scale=1):
 
     normalise = lambda i : int(i*(cm.rainbow.N/10) % cm.rainbow.N)
     cmap = lambda i : colors.to_hex(cm.rainbow(normalise(i)))
+    colour_all = config.CUSTOM_COLOUR
+    if colour_all:
+        try:
+            colors.to_rgb(colour_all)
+            cmap = lambda i : config.CUSTOM_COLOUR
+        except ValueError:
+            print("Warning: CUSTOM_COLOUR invalid - must be a hexadecimal colour code with # in front")
+            pass
 
     origin = np.array([min(df["easting"]),min(df["northing"])])
 

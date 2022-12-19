@@ -39,10 +39,11 @@ The scale of the output svg should be such that the dips and strikes can be dire
 - `LINE_THICKNESS` primarily controls the thickness of strike lines, along with some dip lines
 - `FONT_SIZE` is for the dip magnitude text
 - `STRIKE_LINE_LENGTH` controls the length of each plotted strike line
+- `CUSTOM_COLOUR` is either an empty string or a valid hexademical colour code (with the # in front) that sets the colour of all drawn components
 
 The config option `PLOT_DIPLESS_STRIKES` (= `True` or `False`) controls whether strikes without corresponding dips are plotted as just strikes lines or omitted.
 
-The script separates different plane types into groups, though does not separate them into different layers - this can be done manually in the svg file if desired. Colours and grouping are used to separate different dip and strike measurements at the exact same location. The dip magnitude text can be moved manually as desired by the user. Colours can also be manually redefined in inkscape (e.g. by selecting all lines of a group and setting line colour to black). After separation to different layers, the dips and strikes may be ungrouped and irrelevant dips and strikes removed.
+The script separates different plane types into groups, though does not separate them into different layers - this can be done manually in the svg file if desired. Colours and grouping are used to separate different dip and strike measurements at the exact same location. The dip magnitude text can be moved manually as desired by the user. Colours can also be redefined in `config.py` by changing `CUSTOM_COLOUR` (e.g. to "#000000" for black) or in Inkscape (e.g. by selecting all lines of a group and setting line colour to black). After separation to different layers, the dips and strikes may be ungrouped and irrelevant dips and strikes removed.
 
 See `dipstrikes.svg` for an example output, or below for an image of what the output may look like (going from top to bottom row: bedding, foliation, joint and vein):
 

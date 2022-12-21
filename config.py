@@ -1,4 +1,4 @@
-MAGNETIC_CORRECTION = +0 # where positive is east
+MAGNETIC_CORRECTION = +0 # where positive is east; this value is added to each strike value (after standardisation)
 
 DATA_FILE = "example_data.csv"
 

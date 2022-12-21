@@ -23,7 +23,7 @@ The dip direction should be in letter format, with a maximum length of 2 letters
 
 2) Change `GRID_INTERVAL` (in mm) and `MAP_SCALE` as necessary to match your data. The default in `config.py` is for 8 figure grid references on a 1:10k map.
 
-3) If a magnetic correction is required, change `MAGNETIC_CORRECTION` in `config.py`.
+3) If a magnetic correction is required, change `MAGNETIC_CORRECTION` in `config.py`. This value is added to each strike value after standardisation: `strike = standardise_strike(strike,dip,dip_dir)+config.MAGNETIC_CORRECTION` (line 155 of `dip_strike.py`).
 
 4) Run `dip_strike.py`, which will produce an output svg file whose name is defined by `SVG_FILE` in `config.py`.
 

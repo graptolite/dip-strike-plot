@@ -1,18 +1,3 @@
-# GNU GPL License Notice
-Copyright (C) 2022  Yingbo Li
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # Usage
 1) Enter data into a csv file, whose name matches the CSV_FILE in `config.py`. This csv file must have the following header columns (additional columns may also be present, such as "site" in `example_data.csv`):
 
@@ -55,3 +40,19 @@ Note: if the svg is being opened in Inkscape, the svg elements won't necessarily
 - matplotlib (for colours)
 - numpy
 - pandas
+
+# GNU GPL License Notice
+Copyright (C) 2022  Yingbo Li
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.

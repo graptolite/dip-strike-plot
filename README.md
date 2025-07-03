@@ -20,7 +20,7 @@ Note: currently, the accepted `plane_type`s are:
 
 For `joint` and `vein`, the symbols for horizontal and vertical dips are a bit strange at the moment - however, the script should plot the dip magnitude as well, which can be used to identify planes in these specific orientations.
 # Output
-The scale of the output svg should be such that the dips and strikes can be directly copied and pasted into their correspondingly scaled OS map then just translated for alignment (no scaling necessary). Some other config options (all in the units of pixels):
+The scale of the output svg should be such that the dips and strikes can be directly copied and pasted into their correspondingly scaled OS map then just translated for alignment (no scaling necessary). Note: one way to constrain this alignment is to add a fake data point (e.g. horizontal bed) at a round location (i.e. lies on a map grid line intersection) and align all the structural measurements within the group by matching that point to the expected location. Some other config options (all in the units of pixels):
 - `LINE_THICKNESS` primarily controls the thickness of strike lines, along with some dip lines
 - `FONT_SIZE` is for the dip magnitude text
 - `STRIKE_LINE_LENGTH` controls the length of each plotted strike line
